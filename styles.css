@@ -1,0 +1,152 @@
+/* Universal Box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+x   
+/* Hide the Latitude and Longitude columns */
+/* Hide the Latitude and Longitude columns */
+.styled-table td.lat, .styled-table td.lng {
+    display: none;
+    width: 0;
+    padding: 0;
+}
+
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed to the screen */
+    z-index: 1000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding-top: 60px;
+    overflow: hidden; /* Prevents content from overflowing */
+    cursor: pointer; /* Changes the cursor to indicate clickable area */
+}
+
+/* Modal content */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px; /* Adjusted padding */
+    gap: 20px;
+    height: 100vh;
+    padding-bottom: 200px;
+}
+
+
+
+/* Flex item styling */
+.map-container {
+    flex: 1;
+}
+
+/* Styled table wrapper */
+.styled-table-wrapper {
+    position: relative;
+    height: 100%;
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+/* Table styling */
+.styled-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-top: 93px;
+}
+
+.styled-table thead tr {
+    background-color: #147cb0;
+    color: #ffffff;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #e0f7fa;
+    cursor: pointer;
+}
+
+/* Map container styling */
+.map-container {
+    height: 588px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-top: 91px; }
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .table-container, .map-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .styled-table {
+        font-size: 0.8em;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 8px 10px;
+    }
+
+    .map-container {
+        height: auto; /* Adjust height for mobile */
+    }
+}

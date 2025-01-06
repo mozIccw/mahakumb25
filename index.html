@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maha-Kumbh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="content-container">
+        <div class="table-container">
+            <div class="table-wrapper">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Sample_ID</th>
+                            <th>TimeStamp</th>
+                            <th>Source Name</th>
+                            <th>Image</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A0001</td>
+                            <td>(2026-10-31 11:53:03)</td>
+                            <td>Well</td>
+                            <td><img src="https://placehold.co/50x50" alt="Image" class="clickable-image"></td>
+                            <td>Lorem</td>
+                            <td class="lat" data-lat="25.4690"></td>
+                            <td class="lng" data-lng="81.8550"></td>
+                        </tr>
+                        <tr>
+                            <td>A0002</td>
+                            <td>(2026-10-31 11:53:03)</td>
+                            <td>Pond</td>
+                            <td><img src="https://placehold.co/50x50" alt="Image" class="clickable-image"></td>
+                            <td>Lorem</td>
+                            <td class="lat" data-lat="25.4708"></td>
+                            <td class="lng" data-lng="81.8703"></td>
+                        </tr>
+                        <tr>
+                            <td>A0003</td>
+                            <td>(2026-10-31 11:53:03)</td>
+                            <td>Pond</td>
+                            <td><img src="https://placehold.co/50x50" alt="Image" class="clickable-image"></td>
+                            <td>Lorem</td>
+                            <td class="lat" data-lat="25.6520"></td>
+                            <td class="lng" data-lng="81.8695"></td>
+                        </tr>
+                        <tr>
+                            <td>A0004</td>
+                            <td>(2026-10-31 11:53:03)</td>
+                            <td>River</td>
+                            <td><img src="https://placehold.co/50x50" alt="Image" class="clickable-image"></td>
+                            <td>Lorem</td>
+                            <td class="lat" data-lat="25.9856"></td>
+                            <td class="lng" data-lng="81.3214"></td>
+                        </tr>
+                        <tr>
+                            <td>A0005</td>
+                            <td>(2026-10-31 11:53:03)</td>
+                            <td>Lake</td>
+                            <td><img src="https://placehold.co/50x50" alt="Image" class="clickable-image"></td>
+                            <td>Lorem</td>
+                            <td class="lat" data-lat="25.6598"></td>
+                            <td class="lng" data-lng="81.5230"></td>
+                        </tr>
+                        <tr>
+                            <td>A0005</td>
+                            <td>(2026-10-31 11:53:03)</td>
+                            <td>Lake</td>
+                            <td><img src="https://placehold.co/50x50" alt="Image" class="clickable-image"></td>
+                            <td>Lorem</td>
+                            <td class="lat" data-lat="25.4690"></td>
+                            <td class="lng" data-lng="81.8550"></td>
+                        </tr>
+                        <tr>
+                            <td>A0005</td>
+                            <td>(2026-10-31 11:53:03)</td>
+                            <td>Lake</td>
+                            <td><img src="https://placehold.co/50x50" alt="Image" class="clickable-image"></td>
+                            <td>Lorem</td>
+                            <td class="lat" data-lat="25.4690"></td>
+                            <td class="lng" data-lng="81.8550"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="map" class="map-container"></div>
+    </div>
+
+    <!-- Modal for enlarged image -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="enlargedImage">
+    </div>
+</body>
+</html>
