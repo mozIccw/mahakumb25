@@ -7,15 +7,59 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
-x   
-/* Hide the Latitude and Longitude columns */
-/* Hide the Latitude and Longitude columns */
+
 .styled-table td.lat, .styled-table td.lng {
     display: none;
     width: 0;
     padding: 0;
 }
 
+
+
+.table-wrapper {
+    height: 100%; /* Match the height of the container */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: left;
+}
+
+.styled-table thead {
+    position: sticky;
+    top: 0;
+    background-color:#368cd3;
+    color: #fff;
+    z-index: 1;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.8rem;
+}
+.styled-table td {
+    cursor: pointer;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hide latitude and longitude columns */
+.styled-table .lat,
+.styled-table .lng {
+    display: none;
+}
 
 /* Modal styles */
 .modal {
@@ -64,15 +108,14 @@ x
     align-items: center;
     padding: 70px; /* Adjusted padding */
     gap: 20px;
-    height: 100vh;
+    height: 110vh;
     padding-bottom: 200px;
 }
-
-
-
+    
 /* Flex item styling */
 .map-container {
     flex: 1;
+    border-radius: 8px
 }
 
 /* Styled table wrapper */
@@ -82,48 +125,24 @@ x
     overflow: hidden; /* Hide any overflowing content */
 }
 
-/* Table styling */
-.styled-table {
-    border-collapse: collapse;
-    font-size: 0.9em;
-    min-width: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-top: 93px;
-}
-
-.styled-table thead tr {
-    background-color: #147cb0;
-    color: #ffffff;
-    text-align: left;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:hover {
-    background-color: #e0f7fa;
-    cursor: pointer;
-}
-
 /* Map container styling */
 .map-container {
-    height: 588px;
+    height: 570px;
     border: 1px solid #ccc;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-top: 91px; }
+    margin-top: 19px;
+}
+ .table-container {
+    height: 593px; /* Fixed height for the table container */
+    overflow: hidden; /* Hide overflow */
+    padding-top: 20px;
+    border-radius: 8px;
+}
+table-container {
+    width: 60%;
+    height: 700px;
+    margin-bottom: 20px;
+}
 
 /* Responsive Design */
 @media (max-width: 600px) {
