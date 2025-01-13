@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahakumbh-Analytics</title>
+    <link rel="stylesheet" href="/analysis.css" />
+    <link rel="icon" href="/images/favicon.png" />
+  </head>
+
+  <body>
+    <!-- Animated Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <nav class="navbar">
+      <div class="navbar-logos">
+        <img
+          src="/images/iccw_logo.png"
+          alt="iccw_logo"
+          width="60px"
+          height="60px"
+        />
+        <img
+          src="/images/iitm.png"
+          alt="iitm_logo"
+          width="68px"
+          height="68px"
+        />
+        <div class="navbar-brand">ICCW - Analytics Dashboard</div>
+      </div>
+
+      <div class="nav-time" id="currentTime"></div>
+    </nav>
+
+    <main class="dashboard">
+      <div class="glass-container">
+        <div class="dashboard-header">Analytics Overview</div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value"><span>0</span></div>
+            <div class="stat-label">Active QR Codes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value"><span>0</span></div>
+            <div class="stat-label">Samples Collected</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value"><span>0</span></div>
+            <div class="stat-label">Testing in Progress</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value"><span>0</span></div>
+            <div class="stat-label">Results Pending</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value"><span>0</span></div>
+            <div class="stat-label">Tests Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value"></div>
+            <div class="stat-label">Total QR Codes</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn btn-upload">Upload Test Report</button>
+          <button class="btn btn-approve">Approve/Reject Report</button>
+        </div>
+      </div>
+    </main>
+    <div id="customAlert" class="custom-alert">Report submitted successfully!</div>
+    <footer class="footer">&copy; 2025 ICCW - All Rights Reserved</footer>
+    <!-- Add this at the end of your body tag, before the scripts -->
+<div id="uploadModal" class="modal">
+    <div class="modal-content glass-container1">
+        <div class="modal-header">
+            <h2>Observation Form</h2>
+            <span class="close">&times;</span>
+        </div>
+        <form id="testReportForm" class="report-form">
+            <div class="form-header">
+                <div class="form-group">
+                    <label for="sampleId">Sample ID</label>
+                    <input type="text" id="sampleId" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+            </div>
+            
+            <div class="parameters-container">
+                <div class="parameters-column">
+                    <div class="form-group">
+                        <label for="pH">1. pH</label>
+                        <input type="number" id="pH" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="tds">2. TDS (mg/L)</label>
+                        <input type="number" id="tds" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="turbidity">3. Turbidity (NTU)</label>
+                        <input type="number" id="turbidity" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="chlorine">4. Free residual chlorine (mg/L)</label>
+                        <input type="number" id="chlorine" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="do">5. Dissolved oxygen (mg/L)</label>
+                        <input type="number" id="do" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="tss">6. TSS (mg/L)</label>
+                        <input type="number" id="tss" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="color">7. Color (CU)</label>
+                        <input type="number" id="color">
+                    </div>
+                    <div class="form-group">
+                        <label for="odor">8. Odor</label>
+                        <input type="text" id="odor">
+                    </div>
+                    <div class="form-group">
+                        <label for="hardness">9. Total Hardness (mg/L)</label>
+                        <input type="number" id="hardness" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="alkalinity">10. Total alkalinity (mg/L)</label>
+                        <input type="number" id="alkalinity" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="chloride">11. Chloride (mg/L)</label>
+                        <input type="number" id="chloride" step="0.1">
+                    </div>
+                </div>
+                <div class="parameters-column">
+                    <div class="form-group">
+                        <label for="nitrate">12. Nitrate (mg/L)</label>
+                        <input type="number" id="nitrate" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="iron">13. Iron (mg/L)</label>
+                        <input type="number" id="iron" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="nitrite">14. Nitrite (mg/L)</label>
+                        <input type="number" id="nitrite" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="fluoride">15. Fluoride (mg/L)</label>
+                        <input type="number" id="fluoride" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="ammonia">16. Ammonia (mg/L)</label>
+                        <input type="number" id="ammonia" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="sulphate">17. Sulphate (mg/L)</label>
+                        <input type="number" id="sulphate" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="tkn">18. TKN (mg/L)</label>
+                        <input type="number" id="tkn" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="phosphorus">19. Total Phosphorus (mg/L)</label>
+                        <input type="number" id="phosphorus" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="bod">20. BOD (mg/L)</label>
+                        <input type="number" id="bod" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="cod">21. COD (mg/L)</label>
+                        <input type="number" id="cod" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="bacteria">22. Bacteria</label>
+                        <input type="text" id="bacteria">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <div class="form-group">
+                    <label for="analysedBy">Analysed By</label>
+                    <input type="text" id="analysedBy" required>
+                </div>
+                <div class="form-group">
+                    <label for="approvedBy">Approved By</label>
+                    <input type="text" id="approvedBy" required>
+                </div>
+              </div>
+            <button type="submit" class="btn btn-upload">Submit Report</button>
+        </form>
+    </div>
+</div>
+    <script src="/script.js"></script>
+  </body>
+</html> 
